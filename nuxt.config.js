@@ -1,4 +1,14 @@
 export default {
+
+  // router配置
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/custom',
+        component: resolve(__dirname, 'pages/othername.vue')
+      })
+    }
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt',
