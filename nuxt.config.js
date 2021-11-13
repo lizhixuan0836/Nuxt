@@ -8,6 +8,8 @@ export default {
         component: resolve(__dirname, 'pages/othername.vue')
       })
     }
+    // // 全局配置中间件(权限)
+    // middleware: ['auth']
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -52,8 +54,12 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': 'http://localhost:8080'
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
