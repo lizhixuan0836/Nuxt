@@ -13,7 +13,9 @@ export const getters = {
 }
 export const actions = {
   login ({ commit, getters }, u) {
-    return this.$axios.$post('/api/login', u).then(({ token }) => {
+    // return this.$axios.$post('/api/login', u).then(({ token }) => {
+    // 有了注入更简单
+    return this.$login(u).then(({ token }) => {
       if (token) {
         commit('init', token)
       }
